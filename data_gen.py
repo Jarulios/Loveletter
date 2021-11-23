@@ -30,7 +30,7 @@ def guard_check(hand, vision):
         return False
 
 
-def turn(hand, deck, vision, opponent_vision, opponent_hand, handmaid_flag, turn_win_count, turn_loss_count,
+def playerturn(hand, deck, vision, opponent_vision, opponent_hand, handmaid_flag, turn_win_count, turn_loss_count,
          turn_draw_count, current_depth, max_depth=6):
     print('new turn')
     if not depth > max_depth:
@@ -108,14 +108,14 @@ def turn(hand, deck, vision, opponent_vision, opponent_hand, handmaid_flag, turn
                                                     turn_loss_count = opponent_hand, opponent_vision, turn_loss_count, \
                                                     temp_hand, vision, turn_win_count
                                                 current_depth += 1
-                                                turn(temp_hand, deck, vision, opponent_vision, opponent_hand,
+                                                playerturn(temp_hand, deck, vision, opponent_vision, opponent_hand,
                                                      turn_win_count, turn_loss_count, turn_draw_count, depth, max_depth)
                                                 current_depth -= 1
                                     temp_hand, vision, turn_win_count, opponent_hand, opponent_vision, turn_loss_count \
                                         = opponent_hand, opponent_vision, turn_loss_count, temp_hand, vision, \
                                         turn_win_count
                                     current_depth += 1
-                                    turn(temp_hand, deck, vision, opponent_vision, opponent_hand, turn_win_count,
+                                    playerturn(temp_hand, deck, vision, opponent_vision, opponent_hand, turn_win_count,
                                          turn_loss_count, turn_draw_count, depth, max_depth)
                                     current_depth -= 1
 
@@ -125,7 +125,7 @@ def turn(hand, deck, vision, opponent_vision, opponent_hand, handmaid_flag, turn
                             temp_hand, vision, turn_win_count, opponent_hand, opponent_vision, turn_loss_count = \
                                 opponent_hand, opponent_vision, turn_loss_count, temp_hand, vision, turn_win_count
                             current_depth += 1
-                            turn(temp_hand, deck, vision, opponent_vision, opponent_hand, turn_win_count,
+                            playerturn(temp_hand, deck, vision, opponent_vision, opponent_hand, turn_win_count,
                                  turn_loss_count, turn_draw_count, depth, max_depth)
                             current_depth -= 1
 
@@ -139,7 +139,7 @@ def turn(hand, deck, vision, opponent_vision, opponent_hand, handmaid_flag, turn
                                             turn_loss_count = opponent_hand, opponent_vision, turn_loss_count, \
                                             temp_hand, vision, turn_win_count
                                         current_depth += 1
-                                        turn(temp_hand, deck, vision, opponent_vision, opponent_hand, turn_win_count,
+                                        playerturn(temp_hand, deck, vision, opponent_vision, opponent_hand, turn_win_count,
                                              turn_loss_count,
                                              turn_draw_count, depth, max_depth)
                                         current_depth -= 1
@@ -149,7 +149,7 @@ def turn(hand, deck, vision, opponent_vision, opponent_hand, handmaid_flag, turn
                                 temp_hand, vision, turn_win_count, opponent_hand, opponent_vision, turn_loss_count = \
                                     opponent_hand, opponent_vision, turn_loss_count, temp_hand, vision, turn_win_count
                                 current_depth += 1
-                                turn(temp_hand, deck, vision, opponent_vision, opponent_hand, turn_win_count,
+                                playerturn(temp_hand, deck, vision, opponent_vision, opponent_hand, turn_win_count,
                                      turn_loss_count,
                                      turn_draw_count, depth, max_depth)
                                 current_depth -= 1
@@ -166,7 +166,7 @@ def turn(hand, deck, vision, opponent_vision, opponent_hand, handmaid_flag, turn
                                         = opponent_hand, opponent_vision, turn_loss_count, temp_hand, vision, \
                                         turn_win_count
                                     current_depth += 1
-                                    turn(temp_hand, deck, vision, opponent_vision, opponent_hand, turn_win_count,
+                                    playerturn(temp_hand, deck, vision, opponent_vision, opponent_hand, turn_win_count,
                                          turn_loss_count, turn_draw_count, depth, max_depth)
                                     current_depth -= 1
 
@@ -175,7 +175,7 @@ def turn(hand, deck, vision, opponent_vision, opponent_hand, handmaid_flag, turn
                                 temp_hand, vision, turn_win_count, opponent_hand, opponent_vision, turn_loss_count = \
                                     opponent_hand, opponent_vision, turn_loss_count, temp_hand, vision, turn_win_count
                                 current_depth += 1
-                                turn(temp_hand, deck, vision, opponent_vision, opponent_hand, turn_win_count,
+                                playerturn(temp_hand, deck, vision, opponent_vision, opponent_hand, turn_win_count,
                                      turn_loss_count, turn_draw_count, depth, max_depth)
                                 current_depth -= 1
 
@@ -192,7 +192,7 @@ def turn(hand, deck, vision, opponent_vision, opponent_hand, handmaid_flag, turn
                                                     turn_loss_count = opponent_hand, opponent_vision, turn_loss_count, \
                                                     temp_hand, vision, turn_win_count
                                                 current_depth += 1
-                                                turn(temp_hand, deck, vision, opponent_vision, opponent_hand,
+                                                playerturn(temp_hand, deck, vision, opponent_vision, opponent_hand,
                                                      turn_win_count, turn_loss_count, turn_draw_count, depth, max_depth)
                                                 current_depth -= 1
                                     else:
@@ -206,7 +206,7 @@ def turn(hand, deck, vision, opponent_vision, opponent_hand, handmaid_flag, turn
                                                     turn_loss_count = opponent_hand, opponent_vision, turn_loss_count, \
                                                     temp_hand, vision, turn_win_count
                                                 current_depth += 1
-                                                turn(temp_hand, deck, vision, opponent_vision, opponent_hand,
+                                                playerturn(temp_hand, deck, vision, opponent_vision, opponent_hand,
                                                      turn_win_count, turn_loss_count, turn_draw_count, depth, max_depth)
                                                 current_depth -= 1
 
@@ -217,7 +217,7 @@ def turn(hand, deck, vision, opponent_vision, opponent_hand, handmaid_flag, turn
                                 temp_hand, vision, turn_win_count, opponent_hand, opponent_vision, turn_loss_count = \
                                     opponent_hand, opponent_vision, turn_loss_count, temp_hand, vision, turn_win_count
                                 current_depth += 1
-                                turn(temp_hand, deck, vision, opponent_vision, opponent_hand, turn_win_count,
+                                playerturn(temp_hand, deck, vision, opponent_vision, opponent_hand, turn_win_count,
                                      turn_loss_count, turn_draw_count, depth, max_depth)
                                 current_depth -= 1
 
@@ -229,7 +229,7 @@ def turn(hand, deck, vision, opponent_vision, opponent_hand, handmaid_flag, turn
                     hand, vision, turn_win_count, opponent_hand, opponent_vision, turn_loss_count = \
                         opponent_hand, opponent_vision, turn_loss_count, hand, vision, turn_win_count
                     current_depth += 1
-                    turn(hand, deck, vision, opponent_vision, opponent_hand, turn_win_count, turn_loss_count,
+                    playerturn(hand, deck, vision, opponent_vision, opponent_hand, turn_win_count, turn_loss_count,
                          turn_draw_count, depth, max_depth)
                     current_depth -= 1
 
@@ -261,4 +261,4 @@ for player_card in current_deck:
     for enemy_card in current_deck:
         enemy_hand.append(current_deck.pop(enemy_card))
 
-        print(turn(player_hand, current_deck, player_vision, enemy_vision, enemy_hand, False, 0, 0, 0, 0, 4))
+        print(playerturn(player_hand, current_deck, player_vision, enemy_vision, enemy_hand, False, 0, 0, 0, 0, 4))
