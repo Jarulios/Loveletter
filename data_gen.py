@@ -245,20 +245,3 @@ player_countess_drop_flag = False
 player_countess_flag = False
 enemy_hand = []
 enemy_vision = 0
-enemy_guard_flag = False
-enemy_countess_drop_flag = False
-enemy_countess_flag = False
-win_count = 0
-loss_count = 0
-draw_count = 0
-
-depth = 3
-
-
-# deals first hand
-for player_card in current_deck:
-    player_hand.append(current_deck.pop(player_card))
-    for enemy_card in current_deck:
-        enemy_hand.append(current_deck.pop(enemy_card))
-
-        print(turn(player_hand, current_deck, player_vision, enemy_vision, enemy_hand, False, 0, 0, 0, 0, 4))
